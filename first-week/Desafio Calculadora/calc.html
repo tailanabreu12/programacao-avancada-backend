@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <input type="number" name="num1">
+        <input type="number" name="num2">
+        <input type="submit" value="somar">
+        <input type="submit" value="subtrair">
+        <input type="submit" value="dividir">
+        <input type="submit" value="multiplicar">
+
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const num1 = Number(form.num1.value);
+            const num2 = Number(form.num2.value);
+            if (event.submitter.value === 'somar') {
+                console.log(num1 + num2);
+            } else if (event.submitter.value === 'subtrair') {
+                console.log(num1 - num2);
+            } else if (event.submitter.value === 'dividir') {
+                console.log(num1 / num2);
+            } else if (event.submitter.value === 'multiplicar') {
+                console.log(num1 * num2);
+            }
+        });
+
+        
+        </script>
+</body>
+</html>
