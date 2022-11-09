@@ -522,11 +522,11 @@ console.log(tenis.productDetails());
 
 console.log(document.getElementById('titulo'));
 console.log(document.getElementsByClassName('text'));
-const texts = document.querySelectorAll('.text');
+const texts = document.querySelector('.text');
 console.log(texts);
 
-texts.forEach((data) => {
-    console.log(data);
+texts.forEach(text => {
+    console.log(text);
 });
 
 texts[0].textContent = 'Estou alterando o primeiro parágrafo.';
