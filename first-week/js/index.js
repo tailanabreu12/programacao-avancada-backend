@@ -118,6 +118,8 @@ console.log(chars);
 
 // Desafio Calculadora
 
+/*
+
 function sum(){
     const formData = new FormData(document.querySelector('form'));
     const n1 = formData.get('n1');
@@ -186,7 +188,7 @@ const dataNumTemplateString = `{
 
 console.log(dataNumTemplateString); 
 
-
+*/
 
 // desafio 2 calculadora que armazena em um objeto JSON o resultado das quatro operações basicas
 // minha maneira
@@ -209,6 +211,8 @@ console.log(resultado)
 //Desafio 2 
 // Professor
 
+/*
+
 const numero1 = 10;
 const numero2 = 15;
 const calculadora = {
@@ -221,13 +225,15 @@ const resultado2 = JSON.stringify(calculadora);
 console.log(resultado2)
 
 
-
+*/
 // operador ternário - if simplificado 
 // const resultado3 = n > 20 ? 'Maior que 20' : 'Menor que 20'; 
 
 
 // estruturas, métodos de listas, funções
 
+
+/*
 const texto = '0'
 if(texto === 0)
     console.log("Os dados são iguais.")
@@ -235,6 +241,10 @@ else if(true)
     console.log('Segundo if - if aninhado.')
 else
     console.log('Saída...') // erro na hora de pensar o código...
+
+*/
+
+
 // operador ternário
 // const resultado =  n > 20 ? true : false
 // console.log(resultado)
@@ -251,15 +261,19 @@ const outraLista = ['a', 'b', 'd', 'e', 'c']
 for(let contador = 0; contador < outraLista.length; contador++)
     console.log(`O elemento da
     vez é ${outraLista[contador]}.`) //template literais, ou template strings
-*/
+
+
 const a = 5;
 const b = 10;
 const out = `Quinze é: ${(a+b)}
 e não ${(2*a+b)}.`;
 console.log(out);
 
+*/
 // metodos de arrays    
-const names = ['Tailan', 'Victor', 'Paulo', 'Antonio']
+
+
+const names = ['Tailan', 'Victor', 'Paulo', 'Antonio', '11111111111111111111111111111']
 names.forEach(function(name){
     console.log(name)
 });
@@ -271,9 +285,20 @@ const modifielNames = names.map(function(name){ // map retorna um novo array
         return name
 });
 
-modifielNames.forEach(function(name){
-    console.log(name);
-});
+// modifielNames.forEach(function(name){
+//     console.log(name);
+// });
+
+
+// const namesLength = names.map(function(value){
+//     return value.length;
+// })
+// console.log(namesLength);
+
+// const namesLength = names.map(({length}) => length);
+// console.log(namesLength);   
+
+
 
 // metodo filter - retorna um novo array com os elementos que passaram no teste
 
@@ -295,6 +320,7 @@ console.log(sumArray);
 // names.forEach(element => {
 //     console.log(element)
 // });
+
 
 // funcões 
 
@@ -339,4 +365,186 @@ function fora() {
 */
 
 
-() => ( (x=7) => (x+5) )
+const fora = () => ((x=7), ()=>x+5)  ()
+console.log(fora())
+
+
+// closure - função que retorna outra função
+
+let varX = 50;
+function out(){
+    let varX = 35
+    function sumXand5(){
+        let varX = 10
+        return varX + 5;
+    }
+    return sumXand5();
+}
+console.log(out());
+
+
+
+// POO - Programação Orientada a Objetos
+// Uma classe pode ter vários objetos
+// Pra uma classe ser instanciada, ela precisa ter um construtor
+// Construtor - método especial que é chamado quando a classe é instanciada
+// this - palavra reservada que representa o objeto que está sendo criado
+// Atributos - características do objeto
+// Métodos - ações que o objeto pode realizar
+// Encapsulamento - proteger os atributos e métodos de um objeto
+// Herança - uma classe pode herdar atributos e métodos de outra classe
+// Polimorfismo - uma classe pode ter vários métodos com o mesmo nome, mas com comportamentos diferentes
+// Abstração - é o processo de esconder detalhes de implementação e mostrar somente as funcionalidades ao usuário
+// Classe - é um modelo que define o comportamento de um objeto
+// Objeto - é uma instância de uma classe
+// Atributo - é uma característica do objeto
+// Método - é uma ação que o objeto pode realizar
+// Instância - é um objeto criado a partir de uma classe
+
+
+
+class Product {
+    name;
+    price;
+    constructor (name, price){
+        this.name = name;
+        this.price = price;
+    }
+
+    productDetails(){
+        return `O produto ${this.name} custa ${this.price}.`;
+    }
+
+    static test(){
+        console.log('Testando o método estático');
+    }
+}
+
+//instanciando um objeto Product
+const shirt = new Product('Camisa Branca', 19.99)
+console.log(shirt.productDetails()); 
+
+const prink = new Product('Short verde', 24.99)
+console.log(prink.productDetails()); 
+
+Product.test();
+
+
+
+// Herança - uma classe pode herdar atributos e métodos de outra classe
+
+class Tenis extends Product {
+    
+    constructor(name, price, size){
+        super(name, price);
+        this.size = size;
+    }
+
+    showNumber(){
+        return `O tamanho do ${this.name} é ${this.size}`;
+    }
+
+    // productDetails(){
+    //     return `O produto ${this.name} custa ${this.price} e tem tamanho ${this.size}.`;
+    // }
+}
+
+const tenis = new Tenis('Tenis Nike Jordan', 199.99, 42);
+console.log(tenis.showNumber());
+console.log(tenis.productDetails());
+
+
+
+// DOM - Document Object Model - Modelo de Objeto de Documento 
+// - é uma interface que representa documentos HTML e XML através de objetos. 
+// - Com ela é possível manipular a estrutura, estilo e conteúdo destes documentos.
+
+// window - objeto global do browser
+// document - objeto que representa o html
+// getElementById - método que retorna um elemento html pelo id
+// getElementsByTagName - método que retorna uma coleção de elementos html pelo nome da tag
+// getElementsByClassName - método que retorna uma coleção de elementos html pelo nome da classe
+// querySelector - método que retorna o primeiro elemento html que corresponde ao seletor css
+// querySelectorAll - método que retorna uma coleção de elementos html que correspondem ao seletor css
+// innerHTML - propriedade que retorna ou define o html interno de um elemento
+// textContent - propriedade que retorna ou define o texto interno de um elemento
+// value - propriedade que retorna ou define o valor de um elemento
+// addEventListener - método que adiciona um evento a um elemento
+// onclick - evento que ocorre quando o elemento é clicado
+// onmouseover - evento que ocorre quando o mouse passa por cima do elemento
+// onmouseout - evento que ocorre quando o mouse sai de cima do elemento
+// onkeydown - evento que ocorre quando uma tecla do teclado é pressionada
+// onkeyup - evento que ocorre quando uma tecla do teclado é solta
+// onkeypress - evento que ocorre quando uma tecla do teclado é pressionada e solta
+// onfocus - evento que ocorre quando um elemento recebe o foco
+// onblur - evento que ocorre quando um elemento perde o foco
+// onsubmit - evento que ocorre quando um formulário é enviado
+// onreset - evento que ocorre quando um formulário é resetado
+// onselect - evento que ocorre quando um texto é selecionado
+// onchange - evento que ocorre quando o valor de um elemento é alterado
+// ondblclick - evento que ocorre quando um elemento é clicado duas vezes
+// onmousemove - evento que ocorre quando o mouse é movido sobre um elemento
+// onmousedown - evento que ocorre quando um botão do mouse é pressionado sobre um elemento
+// onmouseup - evento que ocorre quando um botão do mouse é solto sobre um elemento
+// oncontextmenu - evento que ocorre quando o botão direito do mouse é clicado sobre um elemento
+// onwheel - evento que ocorre quando a roda do mouse é rolada sobre um elemento
+// oncopy - evento que ocorre quando um texto é copiado
+// oncut - evento que ocorre quando um texto é cortado
+// onpaste - evento que ocorre quando um texto é colado
+// ondrag - evento que ocorre quando um elemento é arrastado
+// ondragstart - evento que ocorre quando um elemento começa a ser arrastado
+// ondragend - evento que ocorre quando um elemento termina de ser arrastado
+// ondragover - evento que ocorre quando um elemento está sendo arrastado sobre outro elemento
+// ondragenter - evento que ocorre quando um elemento arrastado entra em outro elemento
+// ondragleave - evento que ocorre quando um elemento arrastado sai de outro elemento
+// ondrop - evento que ocorre quando um elemento arrastado é solto sobre outro elemento
+// onscroll - evento que ocorre quando um elemento é rolado
+// onload - evento que ocorre quando um elemento é carregado
+// onunload - evento que ocorre quando um elemento é descarregado
+// onerror - evento que ocorre quando ocorre um erro ao carregar um elemento
+// onresize - evento que ocorre quando o tamanho de um elemento é alterado
+// onselectstart - evento que ocorre quando o texto de um elemento é selecionado
+// onstorage - evento que ocorre quando o armazenamento local é alterado
+// onhashchange - evento que ocorre quando a url é alterada
+// onmessage - evento que ocorre quando uma mensagem é recebida
+// onoffline - evento que ocorre quando o navegador fica offline
+// ononline - evento que ocorre quando o navegador fica online
+// onpopstate - evento que ocorre quando o histórico de navegação é alterado
+// onshow - evento que ocorre quando um elemento é mostrado
+// ontoggle - evento que ocorre quando um elemento é alternado
+// onwheel - evento que ocorre quando a roda do mouse é rolada sobre um elemento
+// onabort - evento que ocorre quando uma requisição é interrompida
+// oncanplay - evento que ocorre quando o navegador pode tocar o áudio/video
+// oncanplaythrough - evento que ocorre quando o navegador pode tocar o áudio/video até o final sem parar para baixar mais dados
+// ondurationchange - evento que ocorre quando a duração do áudio/video é alterada
+// onemptied - evento que ocorre quando o áudio/video está vazio
+// onended - evento que ocorre quando o áudio/video termina
+
+console.log(document.getElementById('titulo'));
+console.log(document.getElementsByClassName('text'));
+const texts = document.querySelectorAll('.text');
+console.log(texts);
+
+texts.forEach((data) => {
+    console.log(data);
+});
+
+texts[0].textContent = 'Estou alterando o primeiro parágrafo.';
+texts[0].innerHTML = '<span>Testando uma alteração no primeiro parágrafo.</span>';
+
+texts[1].style.backgroudColor = 'red';
+texts[2].remove();
+
+const button = document.querySelector('#btn');
+
+button.addEventListener('click', () => (texts[3].style.backgroudColor = 'orange'));
+
+
+
+
+
+// callback - função que é passada como parâmetro para outra função e é executada quando um evento ocorre
+
+
+// promises - objeto que representa o resultado
+
