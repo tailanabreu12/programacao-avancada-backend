@@ -521,23 +521,26 @@ console.log(tenis.productDetails());
 // onended - evento que ocorre quando o áudio/video termina
 
 console.log(document.getElementById('titulo'));
-console.log(document.getElementsByClassName('text'));
-const texts = document.querySelector('.text');
+
+const texts = document.querySelectorAll('.text');
 console.log(texts);
 
-texts.forEach(text => {
-    console.log(text);
-});
+// texts.forEach((data) => console.log(data));
 
 texts[0].textContent = 'Estou alterando o primeiro parágrafo.';
+
 texts[0].innerHTML = '<span>Testando uma alteração no primeiro parágrafo.</span>';
 
-texts[1].style.backgroudColor = 'red';
+texts[1].style.backgroundColor= 'red';
+
+//remove o elemento do html
 texts[2].remove();
 
+// seleciona o elemento
 const button = document.querySelector('#btn');
 
-button.addEventListener('click', () => (texts[3].style.backgroudColor = 'orange'));
+// adiciona um evento ao elemento selecionado 
+button.addEventListener('click', () => (texts[3].style.backgroundColor='orange'));
 
 
 
