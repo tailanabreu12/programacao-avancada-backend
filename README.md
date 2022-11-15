@@ -25,7 +25,7 @@ npm i nodemon -D
 
 ```json
 "scripts": {
-    "dev": "nodemon index.js"
+    "start": "nodemon server.js"
   },
 ```
 
@@ -33,10 +33,10 @@ npm i nodemon -D
 
 ## Ambiente de Desenvolvimento
 
-Visual Studio Code
-git
-Node
-Nodemon
+>Visual Studio Code
+>git
+>Node
+>Nodemon
 
 
 ## Meta
