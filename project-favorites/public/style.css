@@ -1,0 +1,39 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+
+.center{
+    text-align: center;
+}
+
+ul {
+    /* list-style-type: none; */
+    /* list-style: circle; */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(116, 78, 179);
+    margin-top: 1em;
+}
+
+ul li {
+    font-size: 1.2em;
+    list-style: circle;
+}
+
+form input {
+    width: 300px;
+    height: 30px;
+}
+
+.button {
+    width: 5em;
+}

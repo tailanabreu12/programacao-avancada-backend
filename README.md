@@ -1,29 +1,45 @@
 # desenvolvimento-avan-ado-backend
 
-> Repositório destinado à disciplina Desenvolvimento Avançado Back-End do Curso Web Academy
+> Repositório destinado à disciplina Desenvolvimento Avançado Back-End do Curso Web Academy - Desenvolvimento Full-Stack
 
 ## Objetivo
+
+Se aprofundar no desenvolvimento backend de sistemas com JavaScript, trabalhando com NodeJs
 
 <!-- ![](header.png) -->
 
 ## Instalação
 
-OS X & Linux:
+Gerar arquivo configuração do package.json
 
-```sh
-npm install my-crazy-module --save
+```
+npm init -y
 ```
 
-Windows:
-
-```sh
-edit autoexec.bat
 ```
+
+Instação do nodemon
+
+```
+npm i nodemon -D
+```
+
+```json
+"scripts": {
+    "dev": "nodemon index.js"
+  },
+```
+
+```
+
 
 
 ## Ambiente de Desenvolvimento
 
 Visual Studio Code
+git
+Node
+Nodemon
 
 
 ## Meta
@@ -31,5 +47,3 @@ Visual Studio Code
 Tailan da Costa Abreu   
 
 tailanabreuads@gmail.com
-
-Distribuído sob a licença. Veja `MIT` para mais informações.
