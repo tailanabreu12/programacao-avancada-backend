@@ -4,6 +4,8 @@
 
 ## Objetivo
 
+Se aprofundar no desenvolvimento backend de sistemas com JavaScript, trabalhando com NodeJs
+
 <!-- ![](header.png) -->
 
 ## Instalação
@@ -14,16 +16,14 @@ OS X & Linux:
 npm install my-crazy-module --save
 ```
 
-Windows:
-
-```sh
-edit autoexec.bat
-```
 
 
 ## Ambiente de Desenvolvimento
 
 Visual Studio Code
+git
+Node
+Nodemon
 
 
 ## Meta
@@ -31,5 +31,3 @@ Visual Studio Code
 Tailan da Costa Abreu   
 
 tailanabreuads@gmail.com
-
-Distribuído sob a licença. Veja `MIT` para mais informações.

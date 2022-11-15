@@ -1,0 +1,24 @@
+{
+  "name": "programacao-avancada-backend",
+  "version": "1.0.0",
+  "description": "> Repositório destinado à disciplina Desenvolvimento Avançado Back-End do Curso Web Academy",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tailanabreu12/programacao-avancada-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tailanabreu12/programacao-avancada-backend/issues"
+  },
+  "homepage": "https://github.com/tailanabreu12/programacao-avancada-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
