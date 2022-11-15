@@ -14,7 +14,6 @@ Gerar arquivo configuração do package.json
 
 ```
 npm init -y
-```
 
 ```
 
@@ -28,8 +27,6 @@ npm i nodemon -D
 "scripts": {
     "dev": "nodemon index.js"
   },
-```
-
 ```
 
 
