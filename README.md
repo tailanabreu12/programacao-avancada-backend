@@ -33,10 +33,10 @@ npm i nodemon -D
 
 ## Ambiente de Desenvolvimento
 
->Visual Studio Code
->git
->Node
->Nodemon
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [NodeJS](https://nodejs.org/en/)
+- [Git](https://git-scm.com/)
+- [Nodemom](https://www.npmjs.com/package/nodemon)
 
 
 ## Meta
