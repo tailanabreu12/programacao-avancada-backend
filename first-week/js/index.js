@@ -171,7 +171,7 @@ console.log(dogObject);
 const jsonErrado = '{"primeiro": "dado1", "segundo": 222, "terceiro": "dado3"}';
 const jsonErradoObject = JSON.parse(jsonErrado);
 
-//Desafio 1 Minha maneira 
+//Desafio 2 Minha maneira 
 const dataNum = [10, 20, 30, 40, 50];
 const [n1, n2, n3, n4, n5] = dataNum;
 // const dataNumJson = JSON.stringify(dataNum);
