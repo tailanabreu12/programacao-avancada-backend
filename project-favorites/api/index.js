@@ -4,17 +4,35 @@ const URL = require('url')
 const fs = require('fs')
 const path = require('path')
 
-http.createServer((req, res) => {
 
+http.createServer((req, res) => {
+    
+    function writeFile(cb) {
+        fs.writeFile(
+            path.join(__dirname, 'urls.json'),
+            JSON.stringify(data, null, 2),
+            err => {
+                if (err) throw  err
+                cb('Operação realizada com sucesso!')
+            }
+        )
+    }
+    
     const {name, url, del } = URL.parse(req.url, true).query
     if(!name || !url)
-        return res.end('show')
-
-    if(del) 
-        return res.end('delete')
+        return res.end(JSON.stringify(data))
     
-    return res.end('create')
-  
+    if(del){
+        data.urls = data.urls.filter(item => item.url != url) 
+        return writeFile(message => res.end(message))
+    }else{
+        data.urls.push({name, url})
+        return writeFile(message => res.end(message))
+    }
+
+    // return res.end('create')
+    
+    
 }).listen(1200, () => console.log('API is runnung.'))
 
 // Criando uma API para servir o frontend, para que os dados não sejam perdidos, esses dados serão mandados para urls.json onde serão armazenadas.
