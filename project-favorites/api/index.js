@@ -19,13 +19,23 @@ http.createServer((req, res) => {
     }
     
     const {name, url, del } = URL.parse(req.url, true).query
+    
+    //libera cors
+    res.writeHead(200, {
+        'Access-Control-Allow-Origin': '*', // permite que qualquer origem acesse a api
+    })
+
+    // show
     if(!name || !url)
         return res.end(JSON.stringify(data))
     
+    // delete
     if(del){
         data.urls = data.urls.filter(item => item.url != url) 
         return writeFile(message => res.end(message))
     }else{
+
+        // create
         data.urls.push({name, url})
         return writeFile(message => res.end(message))
     }

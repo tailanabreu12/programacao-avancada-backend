@@ -2,19 +2,18 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
-// Função que carrega o conteúdo da API.
-async function load() {
-    // fetch está como await para evitar que entre num esquema de promisse e só devolva o conteúdo após a iteração qua acontece em seguida.
-    const res = await fetch('http://localhost:3000/')
-        .then((data) => data.json())
+async function load() {  
+    // Função que carrega o conteúdo da API.
+    const res = await fetch('http://localhost:1200/').then((data) => data.json())
     // Iterando no vetor com o conteúdo (JSON) que está vindo da API e adicionando-os no frontend.
-    res.urls.map(({url}) => addElement({url}))
+    res.urls.map(({name, url}) => addElement({name, url}))
 }
 
 load()
 
-// Função que adiciona um elemento no DOM
-function addElement({url}) {
+
+// Função que adiciona um elemento no DOM, name e url são os parâmetros que serão passados para a função.
+function addElement({name, url}) {
     // Criando elementos HTML
     const li = document.createElement('li')
     const a = document.createElement('a')
@@ -22,7 +21,7 @@ function addElement({url}) {
     // Adicionando o conteúdo do elemento
     a.setAttribute('href', url)
     a.setAttribute('target', '_blank')
-    a.innerHTML = url
+    a.innerHTML = name + ' - ' + url
 
     const liColor = ul.querySelectorAll('li').length % 2 === 0 ? 'lightblue' : 'lightgreen' // ternário para definir a cor do elemento li (par ou ímpar) 
     li.style.backgroundColor = liColor // adicionando a cor ao elemento li
@@ -31,8 +30,6 @@ function addElement({url}) {
     const liText = document.createTextNode(url)
 
     // Adicionando o elemento filho ao elemento pai
-
-
     const button = document.createElement('button') 
     button.appendChild(document.createTextNode('Remover'))  
     button.setAttribute('onclick', `removeElement('${url}')`) // adicionando o atributo onclick ao elemento button e passando a função removeElement como parâmetro 
@@ -65,14 +62,13 @@ function removeElement() {
 
 form.addEventListener('submit', (event) => { 
     event.preventDefault(); // previnindo o comportamento padrão do formulário (recarregar a página)
-    
-    let { value } = input 
 
-    if (!value)
+    //desestrutura o objeto e pega o valor do name e url do input separados por vírgula
+    const [name, url] = input.value.split(',') // split separa o conteúdo do input por vírgula
+
+
+    if (!input.value)
         return alert('Preencha o campo!')
-
-    const [url] = value.split(',') // quebrando a string em um vetor
-    // console.log(name, url) // exibindo o vetor
 
     if (!url) // se não tiver url - exemplo de erro: 'teste,'
         return alert('O texto não está formatado da maneira correta.')
