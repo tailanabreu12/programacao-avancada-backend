@@ -48,11 +48,8 @@ function addElement({name, url}) {
 function removeElement() {
 
     // Pegando o elemento que foi clicado
-    const button = event.target //
+    const button = event.target
     console.log(button)
-    // button.parentNode.remove() // Forma mais rapida removendo o elemento pai do elemento clicado 
-
-    // Pegando o elemento pai do elemento clicado
     const li = button.parentNode
 
     // Removendo o elemento pai do elemento clicado
@@ -65,6 +62,30 @@ form.addEventListener('submit', (event) => {
 
     //desestrutura o objeto e pega o valor do name e url do input separados por vírgula
     const [name, url] = input.value.split(',') // split separa o conteúdo do input por vírgula
+
+    /* 
+    // outra forma de fazer o mesmo que o código abaixo
+
+    var urlApi = "http://localhost:1200/?name="+name+"&url="+url;//Sua URL
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", urlApi, true);
+
+    xhttp.onreadystatechange = function(){//Função a ser chamada quando a requisição retornar do servidor
+        if ( xhttp.readyState == 4 && xhttp.status == 200 ) {//Verifica se o retorno do servidor deu certo
+            console.log(xhttp.responseText);
+        }
+    }
+    
+    xhttp.send();//Envia a requisição para o servidor
+
+    */
+ 
+async function envia() { 
+    await fetch("http://localhost:1200/?name="+name+"&url="+url) // envia os dados para a API
+}
+
+envia() 
 
 
     if (!input.value)
